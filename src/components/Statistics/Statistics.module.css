@@ -1,0 +1,22 @@
+.statistics {
+  background-color: #fff;
+}
+.title {
+  text-align: center;
+  padding: 20px;
+}
+.stat-list {
+  display: flex;
+}
+.stat-item {
+  min-width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  color: #fff;
+}
+.stat-percentage {
+  font-size: 20px;
+}
