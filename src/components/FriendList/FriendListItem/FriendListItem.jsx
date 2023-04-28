@@ -1,7 +1,7 @@
 import css from './FriendListItem.module.css';
 import PropTypes from 'prop-types';
 
-export const FriendListItem = ({ avatar, id, isOnline, name }) => {
+export const FriendListItem = ({ avatar, isOnline, name }) => {
   return (
     <li className={css.item}>
       <span
@@ -19,7 +19,6 @@ export const FriendListItem = ({ avatar, id, isOnline, name }) => {
 FriendListItem.propTypes = {
   friend: PropTypes.exact({
     avatar: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
     isOnline: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
   }),
