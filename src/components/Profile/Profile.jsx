@@ -1,33 +1,41 @@
-import css from './Profile.module.css';
 import PropTypes from 'prop-types';
+import {
+  Container,
+  Discription,
+  Avatar,
+  UserName,
+  StatsList,
+  StatsItem,
+  StatsValue,
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   const { followers, views, likes } = stats;
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className={css.info}>@{tag}</p>
-        <p className={css.info}>{location}</p>
-      </div>
+    <Container>
+      <Discription>
+        <Avatar src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <p>@{tag}</p>
+        <p>{location}</p>
+      </Discription>
 
-      <ul className={css['stats-list']}>
-        <li className={css['stats-item']}>
-          <span className={css['stats-info']}>Followers</span>
-          <span className={css['stats-value']}>{followers}</span>
-        </li>
-        <li className={css['stats-item']}>
-          <span className={css['stats-info']}>Views</span>
-          <span className={css['stats-value']}>{views}</span>
-        </li>
+      <StatsList>
+        <StatsItem>
+          <span>Followers</span>
+          <StatsValue>{followers}</StatsValue>
+        </StatsItem>
+        <StatsItem>
+          <span>Views</span>
+          <StatsValue>{views}</StatsValue>
+        </StatsItem>
 
-        <li className={css['stats-item']}>
-          <span className={css['stats-info']}>Likes</span>
-          <span className={css['stats-value']}>{likes}</span>
-        </li>
-      </ul>
-    </div>
+        <StatsItem>
+          <span>Likes</span>
+          <StatsValue>{likes}</StatsValue>
+        </StatsItem>
+      </StatsList>
+    </Container>
   );
 };
 
